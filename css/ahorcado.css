@@ -1,0 +1,208 @@
+/**** JUEGO DEL AHORCADO ****/
+
+html{
+    overflow-x: hidden;    
+}
+
+@font-face{
+	font-family: "WEST";
+    src: url("../western/WEST.TTF");
+} 
+
+/* Cambio foto de fondo */
+body{
+	background-image: url("../img/mapamundi.jpg");
+	height: 100%;
+	width: 100%;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+/* Centro sin usar etiqueta center */
+#centrar {
+  margin: 0; 
+  padding: 0; 
+  display: flex; 
+  align-items: center; 
+  position: absolute;
+  top: 50%; 
+  right: 87.75vw;
+}
+
+/*Editamos un poco las casillas de las letras*/
+#abcdario{
+	margin: 10px;
+	border: 10px solid black;
+	opacity:75%;
+	margin-top: 10px;
+	margin-left:0px;
+	width: 100%;
+	position: absolute; 
+	top: 90%;
+	display:flex; 
+	justify-content:center;
+	flex-wrap:wrap;
+	
+}/*Editado*/
+.letra{
+  align-items:center;
+  color: white; 
+  padding-left:11.75px;
+  padding-right:11.75px;
+  margin-right:3.33px;
+  margin-left:3.33px;
+  font-size: 25px; 
+}
+.letra:nth-child(even) {
+  background-color: blue;
+}
+.letra:nth-child(odd) {
+  background-color: red;
+}
+.letra:disabled { /*pseudo-clase*/
+  background-color: white; 
+  color:black;
+}
+
+.main-container {
+  max-width: 800px;
+  margin: auto;  /*lo calcula el navegador, poniendo un valor adecuado*/
+  padding-top: 10vh;
+}
+
+.titulo {
+  margin-top: 8vh;
+  text-align: center;
+  font-family: WEST;
+  font-size: 120px;  
+}
+
+#msg-final {
+  text-align: center;
+  color: white;
+  text-shadow: 6px 6px black;
+  transition: all 0.8s ease;
+  font-size: 40px;
+  height: 60px;
+  margin-bottom: 0vh;
+}
+
+.zoom-in {
+  transform: scale(1) !important;  /*usar la regla !important es una mala práctica y debería evitarse*/
+}
+
+#acierto {
+  text-align: center;
+  min-height: 24px;
+  transform: scale(0); /*lo hace desaparecer*/
+}
+
+.acierto{
+  animation: zoomInOut 1s ease;
+}
+
+.rojo {
+  color: red;
+}
+
+.verde{
+  color: green;
+}
+
+@keyframes zoomInOut {
+  0% {transform: scale(0);}
+  50% {transform: scale(1);}
+  70% {transform: scale(1);}
+  100% {transform: scale(0);}
+}
+
+.palabra {
+  size: 20px;
+  position: absolute;
+  top: 82%; 
+  right: 33%;
+  margin: 0 auto 25px auto;
+  text-align: center;
+  color: royalblue;
+  background-color:white;
+  letter-spacing: 6px;
+  border: 4px solid royalblue;
+  width: 33%;
+  margin-bottom: 3px; 
+  padding-bottom: 10px; 
+}
+
+span {
+   color: red;
+}
+
+
+#picture img {  /*selector espacio en blanco: descendientes*/
+  position: absolute;
+  top: 60%;
+  right: 72vw;
+  height: 225px;
+}
+
+
+
+.encuadre {
+  border: 2px dashed crimson;
+  padding: 3px 2px 2px 6px;
+}
+
+#avionBandera{
+	position: relative;
+}
+
+.avion{
+	transform: rotate(45deg);/*Añadida rotacion*/
+	animation: buitre 15s infinite;
+	animation-timing-function: linear;
+	position: absolute; 
+	top: -12.65vh; 
+}
+/* Modificada la bandera para que siga la estela del avion, tambien modificado y añadida rotacion para que este recta */
+#bandera{
+	animation: buitre 15s infinite;
+	animation-timing-function: linear;
+	height: 100px;
+	opacity: 100%;
+	position: absolute;
+	top: 0vh; 
+}
+#botones{
+	display: flex;
+	flex-direction: column;
+	width: 10%;
+	/* text-align: center;
+	justify-content: center; */
+	position: absolute;
+	right: 89vw;
+	top: 61%; 
+}
+#asia,#africa,#america,#oceania{
+	padding-top:6px; 
+	padding-bottom:6px;
+	margin-top:3px; 
+}
+#europa{
+	color: white;
+	padding-top:12px; 
+	padding-bottom:22px;
+	margin-top:5px; 
+	background-image:url("../img/europa.png");
+	background-size: cover;
+	line-height: 40px;
+	justify-content: center;
+}
+
+
+@keyframes buitre{
+	from{
+		margin-right: 100%; 
+	}
+	to{
+		margin-left: 100%; 
+	}
+}

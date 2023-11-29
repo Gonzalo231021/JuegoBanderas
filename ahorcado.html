@@ -1,0 +1,38 @@
+<!-- JUEGO DEL AHORCADO -->
+
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<meta charset="utf-8">
+		<title>Juego Ahorcado</title>
+		<link rel="stylesheet" href="css/ahorcado.css">	
+		<script type= "text/javascript" src="js/ahorcado.js" defer></script>	
+	</head>
+	<body onload = "inicio()">	
+			<h1 class="titulo">Adivina la bandera</h1>
+			<div id="avionBandera">
+			<img class = "avion" src = "img/avion.gif">
+			<img id = "bandera" src = "img/es.png" alt="Bandera">
+			</div>
+			<div class="main-container">
+				<h1 id="msg-final"></h1>
+				<h2 id="acierto"></h2>			
+			</div>	
+			<div id="centrar">
+				<h2 id="turnos">Intentos restantes: <span id="intentos">6</span></h2> 
+			</div>	
+			<div id="picture">
+					<img src="img/ahorcado_6.png" id="image">
+			</div>
+			<div id="botones" > <!-- He creado botones de continenetes-->
+				<button onclick="inicio('asia')"class="continente" id="asia">Asia</button>
+				<button onclick="inicio('africa')" class="continente" id="africa">Africa</button>
+				<button onclick="inicio('america')" class="continente" id="america">America</button>
+				<button onclick="inicio('europa')" class="continente" id="europa">Europa</button>
+				<button onclick="inicio('oceania')" class="continente" id="oceania">Oceania</button>
+			</div>
+				<!--Agrupado en divs para posicionar mejor-->
+			<div><h2 class="palabra" id="palabra"></h2></div>
+			<div id="abcdario"></div>	
+	</body>
+</html>
